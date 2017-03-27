@@ -1,2 +1,2 @@
-# MY-SNIPPETS
+# MY_SNIPPETS
 Mostly Old Stuff. Some New.
