@@ -185,15 +185,14 @@ VOID SPE_FillDummySection ( PBYTE pbDummyFunc )
 	{
 		for ( size_t i = 0; i < DummySectionSize; i++ )
 		{
-            srand( ( DWORD ) GetTickCount( ) );
-            for ( INT i = 0; i < ( int ) dllMainSize; i += 4 )
-            {
-                INT iRandomNumber = rand( ) % 5; // 0 - 4
-                for ( int ii = 0; ii < 4; ii++ )
-                {
-                    pbDummyFunc[ i + ii ] = junkBytes[ iRandomNumber ][ ii ];
-                }
-            }
+            		for ( INT i = 0; i < ( int ) dllMainSize; i += 4 )
+            		{
+                		INT iRandomNumber = rand( ) % 5; // 0 - 4
+                		for ( int ii = 0; ii < 4; ii++ )
+                		{
+                    			pbDummyFunc[ i + ii ] = junkBytes[ iRandomNumber ][ ii ];
+                		}
+            		}
 		}
 
 		VirtualProtect ( pbDummyFunc, DummySectionSize, dwOldMask, &dwOldMask );
